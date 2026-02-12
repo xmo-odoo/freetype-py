@@ -46,7 +46,7 @@ if not os.path.exists(filename):
             filename = library_name
 
 try:
-    _lib = ctypes.CDLL(filename)
+    _lib = ctypes.PyDLL(filename)
 except (OSError, TypeError):
     _lib = None
     raise RuntimeError('Freetype library not found')
